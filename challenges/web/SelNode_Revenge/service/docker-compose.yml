@@ -1,0 +1,134 @@
+version: "3.7"
+services:
+
+    selnode_revenge_frontend:
+        image: nginx:latest
+        container_name: selnode_revenge_frontend
+        volumes:
+            - ./nginx/sites-enabled:/etc/nginx/sites-enabled
+            - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ./nginx/htpasswd:/var/htpasswd
+        ports:
+            - 12324:80
+        links:
+            - selnode_revenge_0
+            - selnode_revenge_1
+            - selnode_revenge_2
+            - selnode_revenge_3
+            - selnode_revenge_4
+            - selnode_revenge_5
+            - selnode_revenge_6
+            - selnode_revenge_7
+            - selnode_revenge_8
+            - selnode_revenge_9
+
+    selnode_revenge_0:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: selnode_revenge:v1
+        container_name: selnode_revenge_0
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.10'
+                    memory: 500M
+
+    selnode_revenge_1:
+        image: selnode_revenge:v1
+        depends_on:
+            - selnode_revenge_0
+        container_name: selnode_revenge_1
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.10'
+                    memory: 500M
+
+    selnode_revenge_2:
+        image: selnode_revenge:v1
+        depends_on:
+            - selnode_revenge_0
+        container_name: selnode_revenge_2
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.10'
+                    memory: 500M
+
+    selnode_revenge_3:
+        image: selnode_revenge:v1
+        depends_on:
+            - selnode_revenge_0
+        container_name: selnode_revenge_3
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.10'
+                    memory: 500M
+
+    selnode_revenge_4:
+        image: selnode_revenge:v1
+        depends_on:
+            - selnode_revenge_0
+        container_name: selnode_revenge_4
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.10'
+                    memory: 500M
+
+    selnode_revenge_5:
+        image: selnode_revenge:v1
+        depends_on:
+            - selnode_revenge_0
+        container_name: selnode_revenge_5
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.10'
+                    memory: 500M
+
+    selnode_revenge_6:
+        image: selnode_revenge:v1
+        depends_on:
+            - selnode_revenge_0
+        container_name: selnode_revenge_6
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.10'
+                    memory: 500M
+
+    selnode_revenge_7:
+        image: selnode_revenge:v1
+        depends_on:
+            - selnode_revenge_0
+        container_name: selnode_revenge_7
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.10'
+                    memory: 500M
+
+    selnode_revenge_8:
+        image: selnode_revenge:v1
+        depends_on:
+            - selnode_revenge_0
+        container_name: selnode_revenge_8
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.10'
+                    memory: 500M
+
+    selnode_revenge_9:
+        image: selnode_revenge:v1
+        depends_on:
+            - selnode_revenge_0
+        container_name: selnode_revenge_9
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.10'
+                    memory: 500M

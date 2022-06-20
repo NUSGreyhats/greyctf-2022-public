@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+#define INPUT_SIZE {{size}}
+
+char scramble(char a, int i) {
+    if (a < 0x20 || a > 126) {
+        exit(1);
+    }
+    return (a * i % {{ k }} + (a + i))%73 + '0';
+}
+
+bool check(char *password) {
+    // ans: {{ans}}
+    char expected[] = {{ expected }}
+    char expected2[] = {{ expected2 }}
+
+    bool isPass = true;
+    for (int i=0; i < INPUT_SIZE; i++) {
+        if (
+            scramble(password[i], i) != expected[i] ||
+            scramble(password[i], expected[i]) != expected2[i]
+            ) {
+            isPass = false;
+        }
+    }
+
+    return isPass;
+}
+
+int main() {
+    char buf[INPUT_SIZE+1] = {0};
+    fgets(buf, INPUT_SIZE+1, stdin);
+    if (check(buf)) {
+        return 0;
+    } else {
+        return 1;
+    }
+}

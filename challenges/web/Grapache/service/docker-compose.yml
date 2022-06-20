@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+    grapache_apache:
+        image: httpd:2.4.47
+        volumes:
+            - ./apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
+        ports: 
+            - 12321:80
+        links:
+            - grapache_grafana
+    grapache_grafana:
+        image: grafana/grafana-oss:8.1.0
+        volumes:
+            - ./grafana/grafana.ini:/etc/grafana/grafana.ini

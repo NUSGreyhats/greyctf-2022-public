@@ -1,0 +1,40 @@
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+{
+  "manifestVersion": "2.0.0",
+  "signatureType": "grafana",
+  "signedByOrg": "grafana",
+  "signedByOrgName": "Grafana Labs",
+  "plugin": "grafana-clickhouse-datasource",
+  "version": "1.1.2",
+  "time": 1648160590830,
+  "keyId": "7e4d0c6a708866e7",
+  "files": {
+    "CHANGELOG.md": "a498830922196a08875970fb7724af466c6a008379207e9692158ffd48178ea6",
+    "LICENSE": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+    "README.md": "e0cb3a5e498d9aa6ccde45e4eea89563ad0c2419a1136786b320409deb8022c9",
+    "dashboards/cluster-analysis.json": "1146cb09f4a62aef34526a3f82246ee624d119da5f1c8018232d28f791f9bad3",
+    "dashboards/data-analysis.json": "19ea34342b9f9c9df0cac709835b2362fc3ee85babf227690d14e73402d83fd7",
+    "dashboards/query-analysis.json": "9d9de50b0d6b634bb0f9b98d4bdf9e131394351713202fbe6f55c327b9619537",
+    "gpx_clickhouse_linux_amd64": "f78a36426680f7862c7d5db8cc0ebbb892c81b6285393f3a17ae99d46bfaedac",
+    "img/logo.png": "57b548fd842706f2845514f661aed5d4b4aeefeb6b6a891bac7cc0392b3ac060",
+    "img/logo.svg": "1defc6f7e585c67657bcfd8fddc599ee7dfa82f8674413f49fa274c2cd453ec6",
+    "module.js": "c409442097e275fa14c6eb428373664671dcc2fbb5cbab9d2caa458025b77805",
+    "module.js.LICENSE.txt": "0d8f66cd4afb566cb5b7e1540c68f43b939d3eba12ace290f18abc4f4cb53ed0",
+    "module.js.map": "862ca0234544b93f66bb9d658dbff4e9a9237a805eab20937ab091a863ded701",
+    "plugin.json": "b9379176d50514999943037f937c93acd4de372fb1606c13033726db9148401a"
+  }
+}
+-----BEGIN PGP SIGNATURE-----
+Version: OpenPGP.js v4.10.10
+Comment: https://openpgpjs.org
+
+wrkEARMKAAYFAmI8708AIQkQfk0ManCIZucWIQTzOyW2kQdOhGNlcPN+TQxq
+cIhm55dFAgkBgF2OXcYIev9t/tZNYeCEPz+0p+avFtVT//MR/cBJDFkFLwo6
+iH6MqGN51WfogFWVO8YB5Fvc5z92M2TOvu6aguoCCQEYt0WMykjoc4xJS/h1
+JoJR6d4wqAFq5fv/qq5mElsQpk4QDVOnYY9hKJfyfyQGtfj1S72uxPZtiR1P
+jtBKXLROKw==
+=ctB5
+-----END PGP SIGNATURE-----

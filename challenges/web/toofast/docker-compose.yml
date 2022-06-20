@@ -1,0 +1,6 @@
+version: '3.3'
+services:
+  web:
+    image: toofast
+    ports:
+      - '14004:8000'

@@ -1,0 +1,1 @@
+haskell: https://sctf.ehsandev.com/reversing/lambda1.html

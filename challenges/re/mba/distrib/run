@@ -1,0 +1,3 @@
+#!/bin/bash
+
+FLAG=`cat flag.txt` PASS=`cat password.txt` ./mba

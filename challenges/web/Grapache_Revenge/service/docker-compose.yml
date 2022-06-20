@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+    grapache_revenge_apache:
+        image: httpd:2.4.47
+        container_name: grapache_revenge_apache
+        volumes:
+            - ./apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
+        ports: 
+            - 12323:80
+        links:
+            - grapache_revenge_grafana
+    grapache_revenge_grafana:
+        image: grafana/grafana-oss:8.1.0
+        user: $UID:$GID
+        container_name: grapache_revenge_grafana
+        volumes:
+            - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+            - ./grafana/data:/var/lib/grafana
+        environment:
+            - GF_INSTALL_PLUGINS=grafana-clickhouse-datasource
+        links:
+            - grapache_revenge_clickhouse
+    grapache_revenge_clickhouse:
+        build: ./clickhouse
+        container_name: grapache_revenge_clickhouse
+        command: service nginx start
+        entrypoint: ["/bin/bash", "-c", "service nginx start && ./entrypoint.sh"]
+

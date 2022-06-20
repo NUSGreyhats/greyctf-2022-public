@@ -1,0 +1,18 @@
+service ctf
+{
+	instances   = 300
+	disable     = no
+	socket_type = stream
+	protocol    = tcp
+	wait        = no
+	user        = root
+	type        = UNLISTED
+	port        = 5000
+	bind        = 0.0.0.0
+	server      = /home/ctf/init.sh
+	banner_fail = /etc/banner_fail
+
+	per_source	= 300   # the maximum instances of this service per source IP address
+	rlimit_cpu	= 30    # the maximum number of CPU seconds that the service may use
+	rlimit_as   = 1024M # the Address Space resource limit for the service
+}

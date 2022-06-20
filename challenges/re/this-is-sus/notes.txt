@@ -1,0 +1,12 @@
+inspired from 
+https://www.mandiant.com/sites/default/files/2021-10/09-evil.pdf
+https://stackoverflow.com/questions/8713470/executing-code-before-main
+
+
+The idea is to use a combination of before main, during main to set up the key and environment.
+
+A segfault handler is registered where it invoke the real main logic function when the program segfaults.
+
+Sprinkle some junk asm that will trigger segfault in main function and use the handler to invoke real main. This indirect call should not be captured by decompiler.
+
+Throw in stripped static binary for good measures.

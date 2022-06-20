@@ -1,0 +1,17 @@
+server {
+	listen 80 ;
+	listen [::]:80 ;
+
+	root /var/www/html;
+
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name team6.websec.pw;
+
+	location / {
+	    auth_basic  "team6's Area";
+		auth_basic_user_file /var/htpasswd/team6;
+		proxy_pass http://selnode_revenge_6:4444/;
+		proxy_read_timeout 900;
+    }
+}

@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  quotes:
+    build: .
+    command: python server.py
+    ports:
+      - "12326:7070"
+    environment:
+      - flag=grey{qu0735_fr0m_7h3_w153_15_w153_qu0735_7a4c6ec974b6d8b0}
