@@ -1,6 +1,16 @@
 # greyctf-2022-public
 GreyCTF 2022 challenge source and solution
 
+## Challenges
+
+To deploy the challenges on your own machine:
+
+1. Clone this repo.
+2. `cd challenges`
+3. `docker-compose up -d`
+
+Enjoy!
+
 ## Writeups
 
 Thanks to user sayonara#1345 for collating this.
